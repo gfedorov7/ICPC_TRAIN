@@ -14,9 +14,9 @@
 
 void usingVector() {
     std::vector<int> numbers = {1, 2, 3, 4, 5};
-    numbers.push_back(6); // добавить в конец
+    numbers.push_back(6); // РґРѕР±Р°РІРёС‚СЊ РІ РєРѕРЅРµС†
 
-    std::cout << "Третий элемент: " << numbers[2] << std::endl;
+    std::cout << "РўСЂРµС‚РёР№ СЌР»РµРјРµРЅС‚: " << numbers[2] << std::endl;
 
     for(int num : numbers) {
         std::cout << num << " ";
@@ -26,9 +26,9 @@ void usingVector() {
 
 void usingList() {
     std::list<int> numbers = {1, 2, 3, 4, 5};
-    numbers.push_front(6); // добавляем в начало списка
+    numbers.push_front(6); // РґРѕР±Р°РІР»СЏРµРј РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
 
-    numbers.remove(3); // удаляем элемент по значению
+    numbers.remove(3); // СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚ РїРѕ Р·РЅР°С‡РµРЅРёСЋ
 
     for(int num : numbers) {
         std::cout << num << " ";
@@ -38,13 +38,13 @@ void usingList() {
 
 void usingDeque() {
     std::deque<int> numbers = {2, 3, 4};
-    numbers.push_back(1); // в начало
-    numbers.push_front(5); // в конец
+    numbers.push_back(1); // РІ РЅР°С‡Р°Р»Рѕ
+    numbers.push_front(5); // РІ РєРѕРЅРµС†
 
-    std::cout << "Первый элемент: " << numbers.front() << std::endl;
-    std::cout << "Последний элемент: " << numbers.back() << std::endl;
+    std::cout << "РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚: " << numbers.front() << std::endl;
+    std::cout << "РџРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚: " << numbers.back() << std::endl;
 
-    numbers.pop_front(); // удаление первого элемента
+    numbers.pop_front(); // СѓРґР°Р»РµРЅРёРµ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 
     for(int num : numbers) {
         std::cout << num << " ";
@@ -55,7 +55,7 @@ void usingDeque() {
 void usingSet() {
     std::set<int> numbers = {4, 2, 1, 3, 5};
     numbers.insert(6);
-    numbers.insert(3); // дубликат не добавится
+    numbers.insert(3); // РґСѓР±Р»РёРєР°С‚ РЅРµ РґРѕР±Р°РІРёС‚СЃСЏ
 
     if (numbers.find(4) != numbers.end()) {
         std::cout << "4 is in the set" << std::endl;
@@ -69,7 +69,7 @@ void usingSet() {
 
 void usingMultiset() {
     std::multiset<int> numbers = {5, 2, 1, 3, 2};
-    numbers.insert(2); // дубликат добавится
+    numbers.insert(2); // РґСѓР±Р»РёРєР°С‚ РґРѕР±Р°РІРёС‚СЃСЏ
 
     for(int num : numbers) {
         std::cout << num << " ";
@@ -79,11 +79,11 @@ void usingMultiset() {
 
 void usingMap() {
     std::map<std::string, int> fruitCount = {{"apple", 2}, {"banana", 5}};
-    fruitCount["orange"] = 4; // Новая пара ключ-значение
+    fruitCount["orange"] = 4; // РќРѕРІР°СЏ РїР°СЂР° РєР»СЋС‡-Р·РЅР°С‡РµРЅРёРµ
 
     std::cout << "Apples: " << fruitCount["apple"] << std::endl;
-    std::cout << "Pineapple: " << fruitCount["pineapple"] << std::endl; // если нет значения, то вернет
-                                                                        // дефолтное значение
+    std::cout << "Pineapple: " << fruitCount["pineapple"] << std::endl; // РµСЃР»Рё РЅРµС‚ Р·РЅР°С‡РµРЅРёСЏ, С‚Рѕ РІРµСЂРЅРµС‚
+    // РґРµС„РѕР»С‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 
     for(const auto& pair: fruitCount) {
         std::cout << pair.first << ": " << pair.second << " ";
@@ -93,9 +93,9 @@ void usingMap() {
 
 void usingMultimap() {
     std::multimap<std::string, int> fruitCount = {{"apple", 2}, {"apple", 3}, {"banana", 5}};
-    fruitCount.insert({"apple", 1}); // добавляет еще одну пару ключ-значение
+    fruitCount.insert({"apple", 1}); // РґРѕР±Р°РІР»СЏРµС‚ РµС‰Рµ РѕРґРЅСѓ РїР°СЂСѓ РєР»СЋС‡-Р·РЅР°С‡РµРЅРёРµ
 
-    // итерация по multimap
+    // РёС‚РµСЂР°С†РёСЏ РїРѕ multimap
     auto range = fruitCount.equal_range("apple");
     for(auto it = range.first; it != range.second; ++it) {
         std::cout << it->first << ": " << it->second << std::endl;
@@ -109,8 +109,8 @@ void usingMultimap() {
 
 void usingUnorderedSet() {
     std::unordered_set<int> numbers = {4, 1, 2, 3, 5, 10};
-    numbers.insert(6); // добавляем новый элемент
-    numbers.erase(10); // удаляем элемент
+    numbers.insert(6); // РґРѕР±Р°РІР»СЏРµРј РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚
+    numbers.erase(10); // СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚
 
     if (numbers.find(4) != numbers.end()) {
         std::cout << "4 is in the set" << std::endl;
@@ -126,7 +126,7 @@ void usingUnorderedMap() {
     std::unordered_map<std::string, int> fruitCount = {{"apple", 2}, {"banana", 5}};
     fruitCount["orange"] = 4;
 
-    fruitCount.erase("banana"); // удаляем
+    fruitCount.erase("banana"); // СѓРґР°Р»СЏРµРј
 
     std::cout << "Apples: " << fruitCount["apple"] << std::endl;
 
@@ -228,7 +228,7 @@ void usingTransformAlgorithm() {
 }
 
 void usingRemoveAlgorithm() {
-    // есть еще remove
+    // РµСЃС‚СЊ РµС‰Рµ remove
     std::vector<int> data = {1, 2, 3, 4, 5, 6};
     auto newEnd = std::remove_if(data.begin(), data.end(),
                                  [](int x) { return x % 2 == 0; });
